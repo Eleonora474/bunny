@@ -31,6 +31,7 @@ export const getStaticProps = async ({ params }) => {
   })
   return {
     props: { breed: items[0] },
+    revalidate: 1,
   }
 }
 

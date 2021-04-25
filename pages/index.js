@@ -13,6 +13,7 @@ export async function getStaticProps() {
     props: {
       breeds: res.items,
     },
+    revalidate: 1,
   }
 }
 
