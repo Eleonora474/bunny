@@ -30,6 +30,16 @@ export const getStaticProps = async ({ params }) => {
     content_type: 'breed',
     'fields.slug': params.slug,
   })
+
+  if (!items.lenght) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
   return {
     props: { breed: items[0] },
     revalidate: 1,
